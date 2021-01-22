@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>1월 21일 실습2(2) - 정하늘</title>
+</head>
+<body>
+<!--
+다음 기능을 처리하는 함수 calc() 를 구현해 본다.
+- 아규먼트의 개수에 제한이 없게 한다.
+- 아규먼트가 하나도 전달되지 않으면 0 을 리턴한다.
+- 전달된 아규먼트중 하나라도 숫자가 아니면
+    "숫자만 전달하세요" 라는 메시지를 리턴한다.
+- 전달된 값을 모두 더하여 리턴한다.
+
+다음과 같이 다양하게 calc() 를 호출하여 결과를 <h3> 태그와 함께 도규먼트 영역에 출력한다.
+calc(), calc(10, 20, '30'), calc(10, '가나다', 20), calc(1,2,3,4,5)
+-->
+<script>
+function calc(){
+    if(typeof arguments == "undefined")
+        return "0";
+    else if(isNaN(arguments[]) == false){
+            var Asum = 0
+            for(var i in arguments)
+                Asum *= arguments[i];
+            return Asum;}
+    else
+        return "숫자만 전달하세요";
+    }
+c1 = calc()
+c2 = calc(10, 20, '30')
+c3 = calc(10, '가나다', 20)
+c4 = calc(1,2,3,4,5)
+document.write("<h3>"+c1+"</h3>")
+document.write("<h3>"+c2+"</h3>")
+document.write("<h3>"+c3+"</h3>")
+document.write("<h3>"+c4+"</h3>")
+
+
+
+
+
+</script>
+
+</body>
+</html>
