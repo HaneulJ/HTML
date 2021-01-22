@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>1월 21일 실습1 - 정하늘</title>
+</head>
+<body>
+<!--
+다음 값들을 저장하여 배열을 생성한다.
+10, 5, 7,21, 4, 8, 18
+
+모든 원소 값들을 더하여 다음 형식으로 HTML 첫 번째 제목 크기(<h1>)로 출력한다.(document.write())
+모든 원소의 합 : XX
+
+최대값과 최소값을 구해서 순서없는 리스트 형식(<ul>)으로 출력한다.
+	최대값 : XX
+	최소값 : XX
+-->
+<script>
+    var num1 = new Array(10,5,7,21,8,18);
+    var sum = 0;
+    for(var i in num1)
+        sum += num1[i]
+    document.write("<h1>모든 원소의 합: "+sum+"</h1>");
+
+    var max1 = Math.max.apply(null,num1);
+    var min1 = Math.min.apply(null,num1);
+    for(var i = 0; i < num1.length; i++){
+     if(max1<num1[i]){
+        max1=num1[i]
+    }
+    if(min1>num1[i]){
+        min1=num1[i]
+    }}
+    document.write("<ul>")
+    document.write("<li>최대값: "+max1+"</li>");
+    document.write("<li>최소값: "+min1+"</li>");
+    document.write("</ul>")
+</script>
+
+</body>
+</html>
+
