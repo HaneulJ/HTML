@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>1월22일 실습2-정하늘</title>
+    <style>
+        button:nth-of-type(1) {
+	color : red;
+	font-size : 1.5em;
+        }
+        button:nth-of-type(2) {
+	color : blue;
+	font-size : 1.5em;
+        }
+        button:nth-of-type(3) {
+	color : green;
+	font-size : 1.5em;
+        }
+    </style>
+</head>
+<!--
+브라우저에 출력된 버튼이 클릭되면
+선택된 버튼에 따라서 칼라를 적용하여 제시된 <h2> 태그에 "오늘은 XXXX년 X월 X일입니다." 문자열을
+출력하도록 변경하는 자바스크립트 코드를 완성하는데 이벤트 핸들러 구현은 인라인 방식으로 한다
+-->
+<body>
+    <button onclick = "today('red')"> 빨강색</button>
+    <button onclick = "today('blue')">파랑색</button>
+    <button onclick = "today('green')">녹&nbsp;&nbsp;색</button>
+    <hr>
+    <h2></h2>
+
+    <script>
+    function today(p){
+        var d = new Date();
+        var year = d.getFullYear();
+        var month = d.getMonth()+1;
+        var day = d.getDate();
+        var target = document.getElementsByTagName("h2")[0];
+        target.style.color = p;
+        target.textContent = "오늘은 "+year+"년 "+month+"월 "+day+"일 입니다.";
+    }
+    </script>
+</body>
+</html>
+

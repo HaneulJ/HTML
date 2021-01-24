@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>1월22일실습1-정하늘</title>
+</head>
+<body>
+<!--
+1부터 3까지의 랜덤값을 추출하여
+1이면 다음으로, 2이면 네이버로, 3이면 구글로 이동하는 기능을 구현해 본다.
+단, 무조건 이동하는 것이 아니며 사용자에게 확인 받는 서브 윈도우(힌트:window.confirm())를
+출력하여 확인 버튼을 클릭하면 이동하고 취소 버튼이 클릭되면 first.html로 이동한다.
+-->
+<script>
+    var linkrandom = Math.floor(Math.random()*3)+1
+    const first = "../first.html"
+    console.log(linkrandom)
+    var d = confirm("이동하시겠습니까?")
+    if(linkrandom==1||d == true){
+        location.href = "https://www.daum.net/";
+        }
+    else if(linkrandom==2||d == true){
+            location.href = "https://www.naver.com/";
+        }
+    else if(linkrandom==3||d == true){
+            location.href = "https://www.google.com/";
+        }
+    else {
+            location.href = first;
+    }
+</script>
+</body>
+</html>
