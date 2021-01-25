@@ -18,16 +18,20 @@ calc(), calc(10, 20, '30'), calc(10, '가나다', 20), calc(1,2,3,4,5)
 -->
 <script>
 function calc(){
-    if(typeof arguments == "undefined")
-        return "0";
-    else if(isNaN(arguments[]) == false){
-            var Asum = 0
-            for(var i in arguments)
-                Asum *= arguments[i];
-            return Asum;}
-    else
-        return "숫자만 전달하세요";
-    }
+    var Asum = 1
+    if(arguments.length != 0){
+        for(var i=0; i<arguments.length; i++){
+            if(isNaN(arguments[i])){
+                return "숫자만 전달하세요";
+                break;
+            }
+            else{
+                 Asum *= arguments[i]
+                    }
+                }
+            }
+    return Asum;
+   }
 c1 = calc()
 c2 = calc(10, 20, '30')
 c3 = calc(10, '가나다', 20)
